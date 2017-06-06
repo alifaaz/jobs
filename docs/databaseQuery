@@ -1,0 +1,12 @@
+ALTER TABLE `patent_test` ADD CONSTRAINT `patent` FOREIGN KEY (`p_id`) REFERENCES `patient`(`p_id`) ON DELETE CASCADE ON UPDATE CASCADE; ALTER TABLE `patent_test` ADD CONSTRAINT `tests` FOREIGN KEY (`tests_id`) REFERENCES `tests`(`ts_id`) ON DELETE CASCADE ON UPDATE CASCADE; ALTER TABLE `patent_test` ADD CONSTRAINT `test` FOREIGN KEY (`test_id`) REFERENCES `test`(`test_id`) ON DELETE CASCADE ON UPDATE CASCADE; ALTER TABLE `patent_test` ADD CONSTRAINT `user` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+
+SELECT users.* , patient.* , test.* , tests.*  from patent_test 
+INNER JOIN users on users.id = patent_test.user_id
+INNER JOIN patient on patient.p_id = patent_test.p_id
+INNER JOIN test on test.test_id = patent_test.test_id
+INNER JOIN tests on tests.ts_id= patent_test.tests_id
+
+
+SELECT users.* , patient.* , test.* , tests.* from patent_test INNER JOIN users on users.id = patent_test.user_id INNER JOIN patient on patient.p_id = patent_test.p_id INNER JOIN test on test.test_id = patent_test.test_id INNER JOIN tests on tests.ts_id= patent_test.tests_id 

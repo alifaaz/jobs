@@ -1,0 +1,11 @@
+/face => include all file about design javascript,css and html
+/include => include all template needed in site more than once, int include /function,/lang,/library and /template => fottet.php ,and header.php
+
+
+signin.php => here validation of signIn and user and admin sign in and record data about this session here 
+logout.php => log out from system
+user.php   =>  here admin can add user and give it  password,name, and salary and other edit and info belong to user him/herSelf 
+users.php => access to this page by 2 level admin level can do nothin only delete user and view  info
+user level where user can update his/her own  info .
+
+
